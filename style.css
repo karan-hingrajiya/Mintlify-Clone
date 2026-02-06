@@ -1,0 +1,1161 @@
+@font-face {
+  font-family: "mintlify-small-font";
+  src: url("./assets/mintlify-font.woff2");
+}
+@font-face {
+  font-family: "mintlifyHomePageFont";
+  src: url("/assets/mintlify-font-2.woff2");
+  font-family: "inter-fallback";
+  src: url("./assets/navbar-text-mintlify.ttf");
+}
+
+:root {
+  --text-color-main-dark: lab(2.42579% -0.165291 -0.470081);
+  --text-color-main-light: #d9e4ea;
+  --bg-color-soft: lab(100% 0 0 / 0.15);
+  --bg-color-soft-hover: lab(100% 0.01 -0.01 / 0.057);
+  --bg-color-heavy-light: lab(2.43% -0.12 -0.47 / 0.155);
+  --text-color-grey: #d9e4ea89;
+  --text-main-color: #0c8c5e;
+  --text-color-dark-gray: lab(2.42579% -0.165291 -0.470081 / 0.8);
+  --border-color: rgba(128, 128, 128, 0.158);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    "inter-fallback", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  width: 100%;
+  top: 0px;
+  padding: 12px 50px;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+}
+
+.mintlify-logo-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.mintlify-logo-div span {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--text-color-main-light);
+}
+
+.mintlify-logo-div span a {
+  display: flex;
+  align-items: center;
+  color: var(--text-color-main-light);
+  text-decoration: none;
+}
+.nav-buttons-div {
+  display: flex;
+  gap: 12px;
+  height: 35px;
+  width: 30%;
+  align-items: center;
+  justify-content: start;
+}
+
+.navbar-links-div a {
+  text-decoration: none;
+  color: var(--text-color-main-light);
+  font-family: "inter-fallback";
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 10px;
+}
+
+.navbar-links-div {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-buttons-div button {
+  padding: 2px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family:
+    "inter-fallback", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 34px;
+  width: 128px;
+  border-radius: 9999px;
+  text-align: center;
+  background-color: var(--text-color-main-light);
+  color: var(--text-color-main-dark);
+  cursor: pointer;
+}
+
+#contact-btn {
+  background-color: var(--bg-color-soft);
+  backdrop-filter: blur(20px);
+  border: 1px solid transparent;
+  color: var(--text-color-main-light);
+  font-weight: 600;
+}
+
+.nav-links:hover {
+  background-color: var(--bg-color-soft-hover);
+  border-radius: 99999px;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+#start-btn {
+  border: none;
+  font-weight: 600;
+}
+
+#start-btn:hover {
+  opacity: 0.9;
+}
+
+/* main section styling */
+.bg-img img {
+  width: 100%;
+}
+
+/* here i am using opacity to hide the element because diplay none kills the animation when we try to do it because its changes the state very quickly when we hover in it so animation not applying  */
+
+.resource-hidden-bar {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 60px;
+  width: 36rem;
+  height: 16rem;
+  background-color: var(--text-color-main-light);
+  border-radius: 20px;
+  padding: 16px 16px;
+  font-size: 14px;
+  font-family:
+    "inter-fallback", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  /* transform: translateX(20px); */
+  /* z-index: 1000; here z index is never work because inside navbar this is in so this is chaild of navbar element so even though we gave 1000 z-idx still child have 0 layerr or zidx = 0 so its relative to parent so its sub layer is 1000 but main layer of navbar is 0 its priority is low compare to input email field which comes lates in form and in html so its priority is high keep in mind*/
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+.items-title {
+  color: gray;
+}
+
+.items-div {
+  margin-top: 12px;
+  line-height: 20px;
+  padding: 8px 10px;
+}
+
+.items-div:hover {
+  background-color: rgba(255, 255, 255, 0.295);
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.item-list p {
+  font-weight: 500;
+  margin-left: 6px;
+  color: #121212;
+}
+
+.item-list {
+  display: flex;
+  align-items: center;
+}
+
+.item-list img {
+  height: 14px;
+  width: 16px;
+}
+
+.item-small-desc {
+  color: gray;
+  font-size: 13.5px;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.compact-grid-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.heading-items-container {
+  display: flex;
+  gap: 13.4rem;
+  margin-left: 12px;
+  font-size: 12.5px;
+}
+
+/* #resource-link:hover .resource-hidden-bar {
+  display: block;
+  animation: 2s ease-in-out 0.1s infinite alternate;
+}
+
+#doc-link:hover .resource-hidden-bar {
+  display: block;
+  height: 12rem;
+  position: absolute;
+  left: 22.7rem;
+} */
+/* i made mistake in here cuz i am using diplay property which is causing not to applying my animation when we hover on it diplay becomes block and changes the state quickly so its not working  */
+
+.doc-headings {
+  gap: 14rem;
+}
+
+.doc-hidden-bar {
+  opacity: 0;
+  visibility: hidden;
+  height: 12rem;
+  position: absolute;
+  left: 22.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+#resource-link:hover .resource-hidden-bar,
+#doc-link:hover .resource-hidden-bar {
+  opacity: 1;
+  visibility: visible;
+  z-index: 20;
+  transform: translateX(-10px);
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  background-image: url("./assets/bg-light.svg");
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-position: center;
+  height: 140vh;
+  /* width: 100vw; */
+  /* background-attachment: scroll;  */
+  /* its scroll the img when its too long in height wise */
+}
+
+.small-info-div {
+  display: flex;
+  /* margin-top: 6rem; */
+  width: 24rem;
+  height: 1.8rem;
+  background-color: var(--bg-color-heavy-light);
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  padding: 16px 8px 16px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.small-info-div:hover {
+  opacity: 0.87;
+}
+.small-info-div strong {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-color-main-light);
+  padding: 4px 6px;
+  background-color: #0c8c5e;
+  border-radius: 9999px;
+}
+
+.small-info-div p {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-color-main-light);
+}
+
+.small-info-div span {
+  margin-top: 0.26rem;
+}
+
+/* main heading text  */
+.heading-main h1 {
+  color: var(--text-color-main-light);
+  font-size: 3.2rem;
+}
+
+.heading-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.small-intro {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color-main-light);
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.email-form input {
+  all: unset;
+  background-color: var(--bg-color-soft);
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  text-decoration: none;
+  /* border: none; */
+  border-radius: 9999px;
+  width: 20rem;
+  padding-left: 16px;
+  caret-color: #d9e4ea;
+  color: var(--text-color-main-light);
+  font-weight: 500;
+}
+
+.email-form input::placeholder {
+  color: #d9e4ea89;
+  font-family:
+    "inter-fallback", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.email-section {
+  display: flex;
+  margin: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-form button {
+  all: unset;
+  position: relative;
+  bottom: 2.4rem;
+  left: 8rem;
+  height: 26px;
+  background-color: var(--text-color-main-light);
+  color: var(--text-color-main-dark);
+  font-size: 14px;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.email-form button:hover {
+  opacity: 0.91;
+}
+
+/* image section  */
+.hero-img {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  border-radius: 1.5rem;
+}
+
+.company-tags-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  margin-top: 2rem;
+  padding: 2rem 10rem;
+  /* background-color:var(--text-color-main-light); */
+}
+
+.company-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 0.8;
+}
+
+/* main-description */
+
+.main-content-container {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.4rem;
+  margin-top: 8rem;
+  justify-content: center;
+}
+
+.main-content-container h1 {
+  padding: 1.6rem 0;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.main-content-container div p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.58rem;
+  font-weight: 320;
+}
+
+/* main sub-section */
+.sub-section-container {
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 3.5rem;
+  gap: 1.6rem;
+}
+
+.section-div {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 32rem;
+  /* height: 32rem; */
+  gap: 1.2rem;
+  padding: 2rem 1.6rem;
+  box-shadow: 0 0 3px 0 var(--text-color-main-light);
+  border: 0px solid var(--text-color-grey);
+  border-radius: 1.6rem;
+}
+
+.section-div .section-small-title {
+  font-size: 0.82rem;
+  font-weight: 450;
+  color: var(--text-main-color);
+  font-family: "mintlify-small-font";
+}
+
+.section-div h2 {
+  font-weight: 520;
+  font-size: 1.6rem;
+}
+
+.section-div .section-description {
+  text-wrap: balance;
+  /* mdn refrence - Text is wrapped in a way that best balances the number of characters on each line, enhancing layout quality and legibility. Because counting characters and balancing them across multiple lines is computationally expensive, this value is only supported for blocks of text spanning a limited number of lines (six or less for Chromium and ten or less for Firefox)
+ */
+  font-size: 15.5px;
+  line-height: 1.4rem;
+  font-weight: 340;
+}
+
+/* Assistant picutre container  */
+.ai-assistant-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 83%;
+  box-shadow: 0 0 3px 0 var(--text-color-main-light);
+  border: 0px solid var(--text-color-grey);
+  border-radius: 2rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.ai-assistant-section .ai-assistant-section-small-title {
+  font-family:
+    "mintlify-small-font", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-main-color);
+  font-size: 13px;
+}
+
+.ai-assistant-section h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.ai-assistant-section-para {
+  padding: 0 16rem;
+  align-content: center;
+  text-wrap: balance;
+  line-height: 1.4rem;
+  text-align: center;
+  font-weight: 360;
+}
+
+main {
+  padding-bottom: 10rem;
+  /* box-shadow: 0 10px 10px 0px var(--text-color-main-light); */
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.068);
+  border: none;
+  padding-top: 6rem;
+}
+
+.enterprise-knowledge-section {
+  display: flex;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 64rem;
+  margin: 0 auto;
+  gap: 8rem;
+}
+
+.enterprise-knowledge-section div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.enterprise-knowledge-section h4 {
+  font-family:
+    "mintlify-small-font", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-main-color);
+  font-weight: 360;
+  font-size: 14px;
+}
+
+.enterprise-knowledge-section div h3 {
+  font-size: 2.5rem;
+  text-wrap: balance;
+}
+.enterprise-knowledge-section div p {
+  font-weight: 380;
+}
+
+.btn-enterprise button {
+  all: unset;
+  padding: 2px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 34px;
+  width: 160px;
+  border-radius: 9999px;
+  text-align: center;
+  background-color: var(--text-color-main-dark);
+  color: var(--text-color-main-light);
+  cursor: pointer;
+  margin-top: 8rem;
+}
+
+/* partnership and compliance section */
+.partnership-and-compliance-section {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: 64rem;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+.partnership-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.partnership-section h4 {
+  margin-top: 1rem;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.partnership-section p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6rem;
+}
+
+/* background image and with some text and company tags */
+.bg-img-and-company-links {
+  width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-bg-img {
+  width: 63.7rem;
+  background: url("./assets/anthropic-bg-img.svg");
+  background-repeat: no-repeat;
+  color: #fff;
+  cursor: pointer;
+  height: 32rem;
+  padding: 4rem;
+  border-radius: 1.6rem;
+}
+.company-bg-img a {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-bg-img p {
+  font-family:
+    "mintlify-small-font", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.customer-story-desc {
+  margin-top: 1.4rem;
+  font-size: 24px;
+  font-weight: 460;
+  width: 22rem;
+}
+
+.story-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+.story-container p {
+  font-size: 14px;
+  font-family:
+    "inter-fallback", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.company-bg-img:hover {
+  filter: brightness(0.79);
+  transition: all 0.4s ease-in-out;
+}
+.company-bg-img:hover img {
+  transform: translateX(0.2rem);
+  transition: all 0.3s ease-in-out;
+}
+
+.current-user-div {
+  font-family:
+    "inter-fallback", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  margin-top: 8.6rem;
+  gap: 1.6rem;
+}
+
+.current-user-div div {
+  width: 12rem;
+  line-height: 1.4rem;
+}
+.current-user-div .user-count {
+  font-size: 38px;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.current-user-div .user-desc {
+  font-family:
+    "inter-fallback", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #b3b5b6;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.company-tags {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 10rem;
+  align-items: center;
+}
+
+.company-tags .company-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 0.8;
+  cursor: pointer;
+}
+
+.other-main-half-container {
+  background-color: #f7f7f7;
+  padding-bottom: 4.2rem;
+}
+
+/* companies with slidebar */
+.companies-carousel-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-story-container {
+  margin: 0;
+}
+
+.customers-detail {
+  width: 64rem;
+  padding-top: 10rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+.customers-detail .customer-title {
+  font-size: 13px;
+  color: var(--text-main-color);
+  font-family:
+    "mintlify-small-font", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.customers-detail h2 {
+  font-size: 38px;
+  font-weight: 600;
+}
+.customers-detail .customer-detail-desc {
+  width: 40rem;
+  text-align: center;
+  line-height: 1.5rem;
+  padding: 0 1rem;
+  font-weight: 350;
+}
+
+/* scrollable companies container  */
+.companies-info-container .companies-info {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 24.625rem;
+  gap: 1.4rem;
+  padding: 0 0.5rem;
+}
+
+.images-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.images-container .companies-text-above {
+  position: absolute;
+}
+.companies-info-container {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 14.1875rem;
+  /* hiding scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* hiding scrollbar in other browsers*/
+.companies-info-container::-webkit-scrollbar {
+  display: none;
+}
+
+.companies-info .img-companies {
+  border-radius: 1rem;
+}
+.companies-info p {
+  font-size: 16px;
+  /* font-weight: 400; */
+  color: var(--text-color-dark-gray);
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." at the end */
+  line-height: 1.5rem;
+}
+
+.carousel-story-container {
+  display: flex;
+  gap: 0.6rem;
+  /* justify-content: center; */
+  align-items: center;
+}
+.carousel-story-container p {
+  font-size: 15px;
+  color: gray;
+  font-weight: 500;
+}
+
+.companies-info:hover {
+  filter: brightness(0.79);
+  cursor: pointer;
+}
+
+.right-icon {
+  width: 14px;
+  height: 14px;
+  background-color: grey;
+  mask: url("./assets/right-direction-icon.svg");
+  -webkit-mask: url("./assets/right-direction-icon.svg");
+  transition: background-color 0.3s ease;
+  /* here i learned new property which is mask it's like masking the svg like i implements the bg color and mask the svg file or embbed the url then what mask do is its remove the bg color except of the right arrow icon or svg files that masked on it so its pretty easy when u want to change svg file directly from css like this.*/
+}
+
+.companies-info:hover .carousel-story-container .right-icon {
+  transform: translateX(0.5rem);
+  background-color: #0c8c5e;
+  transition: all 0.4s ease-in-out;
+}
+.companies-info:hover .carousel-story-container p {
+  color: #0c8c5e;
+  transition: all 0.3s ease-in-out;
+}
+
+.navigation-btns {
+  display: flex;
+  gap: 1rem;
+  width: 64rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.navigation-btns button {
+  all: unset;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: var(--text-color-main-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.navigation-btns .left-icon {
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  mask: url("./assets/left-arrow-icon.svg");
+}
+
+.navigation-btns .right {
+  background-color: gray;
+  color: white;
+}
+.navigation-btns .right-icon-btn {
+  height: 18px;
+  width: 18px;
+}
+
+/* make documentaion section */
+.create-doc-conatiner {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.create-doc-conatiner .heading-create-doc {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-doc-conatiner .heading-create-doc h1 {
+  width: 28rem;
+  line-height: 2.8rem;
+  font-size: 40px;
+  font-weight: 600;
+  align-content: center;
+  text-align: center;
+}
+.create-doc-conatiner .heading-create-doc p {
+  padding-top: 0.4rem;
+  font-size: 16px;
+}
+.heading-create-doc div {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 1rem;
+}
+.heading-create-doc div button {
+  all: unset;
+  padding: 2px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  height: 34px;
+  width: 160px;
+  border-radius: 9999px;
+  text-align: center;
+  background-color: var(--text-color-main-dark);
+  color: #fff;
+  cursor: pointer;
+}
+
+.heading-create-doc div #demo-btn {
+  width: 100px;
+  background-color: transparent;
+  color: #121212;
+  border: 0.6px solid rgb(213, 212, 212);
+}
+
+.pricing-and-and-advertisement-container {
+  display: flex;
+  margin: 0 auto;
+}
+.advertisement-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 30rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 8rem;
+  height: 17rem;
+  margin-top: 6rem;
+}
+.start-building {
+  border-left: 1px solid rgba(128, 128, 128, 0.158);
+}
+.advertisement-div .svg-container {
+  height: 3.4rem;
+  width: 3.4rem;
+  padding: 0.4rem;
+  border: 1px solid rgba(128, 128, 128, 0.422);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 3px -1px rgba(128, 128, 128, 0.422);
+}
+.main-content-ad {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content-ad h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+.main-content-ad p {
+  font-size: 16px;
+  font-weight: 350;
+}
+.pricing-and-ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+.pricing-and-ad p {
+  color: var(--text-main-color);
+}
+.pricing-and-ad .right-icon {
+  background-color: #0c8c5e;
+  mask: url("./assets/right-direction-icon.svg");
+  height: 17px;
+  width: 17px;
+}
+.pricing-and-ad:hover {
+  cursor: pointer;
+}
+.pricing-and-ad:hover .right-icon {
+  transform: translateX(0.2rem);
+  transition: all 0.3s ease-in-out;
+}
+
+/* footer  */
+.footer-mintlify {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  background-color: #f8f8f898;
+}
+.logo-social-media-links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem 1rem 2rem;
+  width: 78%;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.logo-social-media-links-container .social-media-links-container {
+  display: flex;
+  gap: 1rem;
+}
+.social-media-links-container a {
+  opacity: 0.6;
+}
+.logo-social-media-links-container .social-media-links-container a:hover {
+  opacity: 1;
+}
+
+/* footer links  */
+.footer-links-container {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 78%;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+}
+.links-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.links-lists li,
+a {
+  all: unset;
+  cursor: pointer;
+}
+.links-lists ul {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.links-lists li {
+  font-size: 14px;
+  font-weight: 550;
+  padding: 0.6rem 0.6rem;
+  border-radius: 9999px;
+}
+.links-lists a {
+  color: var(--text-color-main-dark);
+}
+.links-lists li:hover {
+  background-color: var(--text-color-grey);
+  transition: all 0.3s ease-in-out;
+}
+.links-lists p {
+  width: 11.5rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 14px;
+  color: grey;
+  font-weight: 550;
+}
+
+.circular-text-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circular-text {
+  fill: black; /* Text color */
+  font-size: 4px;
+  font-weight: 500; /* medium weight */
+  text-transform: uppercase;
+  font-family:
+    "inter-fallback", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* copyright section */
+.back-up-by {
+  display: flex;
+  width: 78%;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background-color: #f7f7f7;
+}
+.back-up-by p {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.copyright-section {
+  width: 78%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  padding-bottom: 6rem;
+}
+.system-check-container a {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  display: flex;
+  background-color: #b3b5b61e;
+  justify-content: center;
+  align-items: center;
+  width: 8.5rem;
+  gap: 0.3rem;
+  border-radius: 9999px;
+}
+.system-check-container p {
+  font-size: 13px;
+  font-weight: 500;
+}
+.copyright-text p{
+  color:grey;
+  font-size: 13px;
+  font-weight: 450;
+}
+
+/* btns dark and light mode  */
+.mode-btns{
+  display: flex;
+  padding:0.1rem 0.2rem;
+  background-color: #b3b5b638;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+.mode-btns button{
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:0.4rem 0.4rem;
+  border-radius: 50%;
+}
+
+.mode-btns .light-mode{
+  background-color: #fff;
+}
