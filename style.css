@@ -243,8 +243,10 @@ body {
   background-repeat: no-repeat;
   /* background-size: cover; */
   background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
   height: 140vh;
-  /* width: 100vw; */
+  width: 100vw;
   /* background-attachment: scroll;  */
   /* its scroll the img when its too long in height wise */
 }
