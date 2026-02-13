@@ -241,12 +241,13 @@
 body {
   background-image: url("./assets/bg-light.svg");
   background-repeat: no-repeat;
-  /* background-size: cover; */
+  background-size: cover;
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
   height: 140vh;
   width: 100vw;
+  overflow-x: hidden;
   /* background-attachment: scroll;  */
   /* its scroll the img when its too long in height wise */
 }
